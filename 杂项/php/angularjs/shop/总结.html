@@ -1,0 +1,29 @@
+angularjs 框架—体量很大的框架
+
+angular是一个全局对象，可以去调用函数。angular.module,angular.isArray等
+
+每个控制器都有一个$scope,子控制器可以继承父控制器中的$scope内容。ng-app自带一个$rootScope。所有控制器都可以使用$rootScope。我们可以借助$rootScope进行控制器之间的数据传递
+
+一般情况我们会使用路由（引入angular-route.min.js）进行页面<ng-view>替换，而且会这个页面配套建立一个控制器。
+
+自定义指令有4种调用形式：标签、属性、class、注释。
+
+进行数据绑定一般使用{{}}，大括号里面写的是表达式。
+
+通过.directive函数来自定义指令。
+
+MVC（model、view、controller） model是我们的数据（比如：数组、对象、字符串），view是我们的标签（div、a、button等），controller是写业务逻辑的（比如：函数、增加属性等等）
+
+angularjs使用ajax网络请求，需要引入一个叫做$http的服务，请求之后的回调函数，有5个参数，但是我们关注的是第一个参数（服务器返回的数据本身），如果服务器返回的是json字符串，我们拿到的数据是解析为对象之后的数据。
+
+常见的数据绑定有3种：input的ng-model、 ng-bind 、{{}}
+
+angularjs里面有很多内置的指令，ng-repeat用的比较多，主要用于循环。
+
+angularjs里有DOM操作的指令，比如：ng-show，ng-hide。
+
+系统里有内置过滤器：currency、uppercase、lowercase、orderBy、filter（可用于自定义过滤器）
+
+我们可以通过ng-class指令给我们的便签添加class
+
+ng-click可以为元素添加点击事件 ，当然还有其他事件

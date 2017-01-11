@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="button" value="按钮" id="btn">
+	<ul id="ul1"></ul>
+
+	<script src="ajax.js"></script>
+	<script>
+		
+	/*
+	ajax:
+		1.需要在服务器环境下运行
+
+
+	ajax流程:
+		1.创建ajax对象
+
+			ie7以下浏览器下中创建ajax对象:
+				new ActiveXObject('Microsoft.XMLHTTP');
+			标准浏览器中创建ajax对象:
+				new XMLHttpRequest();
+
+		2.准备开始与服务器端建立连接
+			使用open()方法来建立连接
+			open(method, url, asynchronous, user, password);
+
+			method : 请求方式   get post   put  delete  update
+
+			url : 请求的服务器地址
+
+			asynchronous : 是否使用异步请求  
+				true 异步 : 非阻塞  前面的代码不会影响后面的代码执行
+				false 同步 : 阻塞  前面的代码会影响后面的代码执行
+
+			user : 服务器授权请求的用户名
+
+			password : 服务器授权请求的密码
+
+			user 和 password : 服务器端配置,一般情况下不会使用
+
+
+		3.发送请求
+
+		4.等待服务器返回信息
+
+		5.获取到服务器返回的信息
+	*/
+
+		window.onload = function(){
+			var oBtn = document.getElementById('btn');
+
+			oBtn.onclick = function(){
+
+				ajax('get','new.php','',function(data){
+					var data = JSON.parse(data);  //将 JSON 字符串转换成对象。 
+							
+					var oUl = document.getElementById('ul1');
+
+					var html = "";
+
+					for(var i = 0;i < data.length;i++){
+
+						html += '<li><a href = "">'+data[i].title+'</a>[<span>'+data[i].date+'</span>]</li>';
+					}
+
+					oUl.innerHTML = html;
+				});		
+
+				
+				setInterval(function(){
+
+					ajax('get','new.php','',function(data){
+						var data = JSON.parse(data);  //将 JSON 字符串转换成对象。 
+								
+						var oUl = document.getElementById('ul1');
+
+						var html = "";
+
+						for(var i = 0;i < data.length;i++){
+
+							html += '<li><a href = "">'+data[i].title+'</a>[<span>'+data[i].date+'</span>]</li>';
+						}
+
+						oUl.innerHTML = html;
+					});		
+
+				},1000);
+					
+			}
+
+			
+		}
+
+		
+
+
+	</script>
+</body>
+</html>
