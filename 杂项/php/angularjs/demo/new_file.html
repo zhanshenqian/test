@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>初识angular</title>
+	</head>
+	<body ng-app="">
+		<input type="text" ng-model="test"/>
+		<p>{{test}}</p>
+		<!--指令 （directive）：angular提供的一些命令，不同的指令代表不同的含义
+			ngApp指令：用于定义一个应用程序，ngApp指令只能使用一次，不能使用多次。
+			我们通常会把ngApp指令绑定到body或者html上面。如果绑定body上，body的子元素或者孙子元素就可以使用angular的语法
+		-->
+	</body>
+	<script src="js/angular.min.js_1.5.8.js" type="text/javascript" charset="utf-8"></script>
+</html>

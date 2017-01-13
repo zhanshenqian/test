@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+	<head>
+		<meta charset="UTF-8">
+		<title>过滤器</title>
+	</head>
+	<body ng-controller="mainCtrl">
+		<p>{{price|currency:"￥"}}</p>	
+		<p>{{str|lowercase}}</p>	
+		<p>{{i}}</p>
+	</body>
+	<script src="js/angular.min.js_1.5.8.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app=angular.module("test",[]);
+		
+		app.controller("mainCtrl",function ($scope,$timeout) {
+			// body...
+			$scope.price=119;
+			$scope.str="Hello World";
+			$scope.i=0;
+			$timeout(function(){
+				$scope.i=100;
+			},2000);
+			// $interval(function(){
+			// 	$scope.i++;
+			// },1000)
+			
+		})
+	</script>
+</html>
+

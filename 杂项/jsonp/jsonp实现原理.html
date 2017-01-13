@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function fn1(){
+            alert("这是一个函数");
+        }
+
+        function fn2(a){
+            alert(a)
+            console.log(a);
+
+        }
+
+        function callback(a){
+            console.log(a);
+        }
+        /*
+
+        jsonp 实现原理:
+
+            利用script加载任意文件,都会将文件里面的内容作为JavaScript脚本来解的特点,让远程服务器配合在服务器端来输出一个字符串形式的函数调用.当script标签读取到远程服务器的字符串时,会自动解析成函数调用
+
+        使用jsonp 的目的:
+
+            从外部服务器获取数据
+
+        jsonp 可以成功获取数据的前提:
+
+            1.服务器提供了接口支持
+                接口:一个网络地址
+                提供接口支持的意思是:服务器端会返回一个函数调用格式的字符串
+
+            2.服务器知道本地需要调用函数的函数名
+
+            3.回调函数要在引用外部服务器地址的script标签之上的script标签中定义,否则会找不到函数
+
+        问题:
+            怎么让服务器知道我们需要调用的函数的函数名
+                1.约定好一个固定的函数名
+                    比如 : callback
+
+                2.通过地址栏传参,将函数名称告诉给服务器端,服务器端获取到函数名称之后,根据获取到的函数名称来输出字符串格式的函数调用
+                    所传的参数名称是需要约定好的
+                    比如 : 向百度的index.php页面发送jsonp请求,参数中的cb是需要事先和百度服务器方面约定好的名称,cb参数的值,就是我们本地需要调用的函数的函数名称,具体格式:
+                        "http://www.baidu.com/index.php?cb=callback"
+
+                    通常情况是接受jsonp请求的服务器来定好参数的名称,我们根据服务器提供的参数名来传参数值
+
+        */
+    </script>
+    <script src = "http://1.yqg160302.applinzi.com">
+
+    </script>
+</body>
+</html>

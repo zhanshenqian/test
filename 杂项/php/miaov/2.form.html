@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<!--
+		
+		表单:数据的提交
+
+			action : 数据提交的地址,默认的是当前页面
+
+			method : 数据提交的方式,默认是get方式
+
+				1.get 
+					把数据名称和数据值用=连接,如果有多个的话,那么他会把多个数据组合用用&进行连接,然后把数据放在url?后面传到指定网页
+
+					get方式提交表单的时候,会在url?后面将我们所提交的内容显示出来,可能会暴露用户的隐私,相对于post的方式,post方式则不会在url?后面显示我们所要提交的内容
+
+					url长度限制的原因,我们不要通过get方式传递过多的数据
+
+				2.post
+					理论上无限制
+
+			enctype : 提交的数据格式
+
+
+
+	-->
+	
+	<form action="2.post.php" method="post">
+		
+		<input type="text" name = "username">
+		<input type="text" name = "age">
+		<input type="submit" value="提交">
+
+	</form>
+
+
+
+</body>
+</html>
